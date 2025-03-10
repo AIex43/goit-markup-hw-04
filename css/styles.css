@@ -15,6 +15,14 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+  /* Анімація для всіх посилань */
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -35,6 +43,11 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+/* Глобальне правило для SVG (за винятком іконок з класом .no-fill) */
+svg:not(.no-fill) {
+  fill: currentColor;
 }
 
 /* Хедер */
@@ -94,9 +107,9 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Активне посилання (припустимо, перше) */
 .menu-item:first-child .menu-link {
   position: relative;
   color: #404bbf;
@@ -153,14 +166,15 @@ img {
   overflow: hidden;
 }
 
-/* Секція hero (фон із градієнтом та зображенням) */
+/* Секція hero */
 .hero {
+  max-width: 1440px;
+  margin: 0 auto;
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/img-name.jpeg);
-  max-width: 1440px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -179,14 +193,10 @@ img {
 }
 
 .hero-button {
-  display: block;
-  margin: 0 auto;
   min-width: 169px;
   height: 56px;
-  border: none;
   background-color: #4d5ae5;
   border-radius: 4px;
-  cursor: pointer;
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 0.04em;
@@ -229,7 +239,7 @@ img {
   color: #434455;
 }
 
-/* Секція features (переваг) */
+/* Секція features */
 .features {
   padding: 120px 0;
 }
@@ -244,7 +254,6 @@ img {
   text-align: center;
 }
 
-/* Контейнер для іконки в секції переваг */
 .icon-container {
   display: flex;
   align-items: center;
@@ -257,11 +266,10 @@ img {
 }
 
 .features-item svg {
-  width: 64px;
-  height: 64px;
+  /* Розміри задаються через HTML */
 }
 
-/* Секція team (Наш команда) */
+/* Секція team */
 .team {
   padding: 120px 0;
   background-color: #f4f4fd;
@@ -291,7 +299,6 @@ img {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Перший елемент списку команди */
 .team-item:first-child {
   border-radius: 0px 0px 4px 4px;
 }
@@ -302,7 +309,6 @@ img {
   background-color: #ffffff;
 }
 
-/* Список соцмереж всередині картки команди */
 .team-social ul {
   display: flex;
   gap: 24px;
@@ -311,7 +317,7 @@ img {
   margin: 0;
 }
 
-.team-social li {
+.social-item {
   width: 40px;
   height: 40px;
 }
@@ -333,12 +339,10 @@ img {
 }
 
 .team-social svg {
-  width: 16px;
-  height: 16px;
-  fill: #f4f4fd;
+  /* Розміри задаються через HTML */
 }
 
-/* Секція portfolio (Наше портфоліо) */
+/* Секція portfolio */
 .portfolio {
   padding: 120px 0;
 }
@@ -367,7 +371,13 @@ img {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Оверлей на портфоліо */
+.portfolio-item:hover,
+.portfolio-item:focus-within {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+              0px 1px 1px rgba(46, 47, 66, 0.16),
+              0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
 .portfolio-overlay {
   position: absolute;
   bottom: 0;
@@ -386,17 +396,7 @@ img {
   padding: 20px;
 }
 
-.portfolio-item:hover .portfolio-overlay {
-  transform: translateY(0);
-}
-
-.portfolio-item:hover {
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-              0px 1px 1px rgba(46, 47, 66, 0.16),
-              0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-
-/* Секція apps (Додатки) */
+/* Секція apps */
 .apps {
   padding: 120px 0;
 }
@@ -432,10 +432,6 @@ img {
   width: 100%;
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.app-card:hover .app-overlay {
-  transform: translateY(0%);
 }
 
 /* Футер */
@@ -481,7 +477,7 @@ img {
   gap: 16px;
 }
 
-.footer-social li {
+.footer-social .social-item {
   width: 40px;
   height: 40px;
 }
@@ -503,7 +499,5 @@ img {
 }
 
 .footer-social svg {
-  width: 24px;
-  height: 24px;
-  fill: #f4f4fd;
+  /* Розміри задаються через HTML */
 }
