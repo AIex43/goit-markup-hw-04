@@ -265,10 +265,6 @@ svg:not(.no-fill) {
   margin-bottom: 8px;
 }
 
-.features-item svg {
-  /* Розміри задаються через HTML */
-}
-
 /* Секція team */
 .team {
   padding: 120px 0;
@@ -336,10 +332,6 @@ svg:not(.no-fill) {
 .team-social a:hover,
 .team-social a:focus {
   background-color: #404bbf;
-}
-
-.team-social svg {
-  /* Розміри задаються через HTML */
 }
 
 /* Секція portfolio */
@@ -498,6 +490,17 @@ svg:not(.no-fill) {
   background-color: #31d0aa;
 }
 
-.footer-social svg {
-  /* Розміри задаються через HTML */
+/* ----------------------------- */
+/* Додаткові правила для ховера */
+/* ----------------------------- */
+
+/* При ховері на картці портфоліо оверлей з'являється */
+.portfolio-item:hover .portfolio-overlay,
+.portfolio-item:focus-within .portfolio-overlay {
+  transform: translateY(0);
+}
+
+/* При ховері на картці додатків оверлей з'являється */
+.app-card:hover .app-overlay {
+  transform: translateY(0);
 }
