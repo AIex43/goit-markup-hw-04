@@ -51,7 +51,155 @@ svg:not(.no-fill) {
   fill: currentColor;
 }
 
-/* ----------------- СЕКЦІЯ SERVICES ----------------- */
+/* ----------------- Хедер ----------------- */
+.header {
+  color: white;
+  border-bottom: 1px solid #e7e9fc;
+  padding: 0 15px;
+  box-shadow: 0px 2px 1px rgba(46,47,66,0.08),
+              0px 1px 1px rgba(46,47,66,0.16),
+              0px 1px 6px rgba(46,47,66,0.08);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 15px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #4d5ae5;
+  margin-right: 76px;
+}
+
+.logo span,
+.logo-span {
+  color: #2e2f42;
+}
+
+.menu {
+  display: flex;
+  gap: 40px;
+}
+
+.menu-link {
+  padding: 24px 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-item:first-child .menu-link {
+  position: relative;
+  color: #404bbf;
+}
+
+.menu-item:first-child .menu-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -1px;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+}
+
+.menu-link:hover,
+.menu-link:focus {
+  color: #404bbf;
+}
+
+.contacts {
+  display: flex;
+  gap: 40px;
+}
+
+.contact-link {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-link:hover,
+.contact-link:focus {
+  color: #404bbf;
+}
+
+.address {
+  font-style: normal;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  overflow: hidden;
+}
+
+/* ----------------- Hero ----------------- */
+.section.hero {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-image: linear-gradient(rgba(46,47,66,0.7), rgba(46,47,66,0.7)), url(../images/img-name.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 188px 0;
+}
+
+.hero-title {
+  font-size: 56px;
+  line-height: 1.07;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin: 0 auto 20px;
+  max-width: 496px;
+}
+
+.hero-button {
+  min-width: 169px;
+  height: 56px;
+  background-color: #4d5ae5;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-button:hover,
+.hero-button:focus {
+  background-color: #404bbf;
+}
+
+/* ----------------- Services ----------------- */
 .section.services {
   padding: 120px 0;
 }
@@ -82,7 +230,7 @@ svg:not(.no-fill) {
   color: #434455;
 }
 
-/* ----------------- СЕКЦІЯ FEATURES ----------------- */
+/* ----------------- Features ----------------- */
 .section.features {
   padding: 120px 0;
 }
@@ -110,7 +258,7 @@ svg:not(.no-fill) {
 
 /* Розміри SVG задаються через HTML */
 
-/* ----------------- СЕКЦІЯ TEAM ----------------- */
+/* ----------------- Team ----------------- */
 .section.team {
   padding: 120px 0;
   background-color: #f4f4fd;
@@ -134,15 +282,15 @@ svg:not(.no-fill) {
 .team-item {
   width: calc((100% - 72px) / 4);
   text-align: center;
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-              0px 1px 1px rgba(46, 47, 66, 0.16),
-              0px 2px 1px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 1px 6px rgba(46,47,66,0.08),
+              0px 1px 1px rgba(46,47,66,0.16),
+              0px 2px 1px rgba(46,47,66,0.08);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-item:hover,
 .team-item:focus-within {
-  box-shadow: 0px 2px 8px rgba(46, 47, 66, 0.2);
+  box-shadow: 0px 2px 8px rgba(46,47,66,0.2);
 }
 
 .team-info {
@@ -179,6 +327,164 @@ svg:not(.no-fill) {
 .social-item a:hover,
 .social-item a:focus {
   background-color: #404bbf;
+}
+
+/* Розміри SVG задаються через HTML */
+
+/* ----------------- Portfolio ----------------- */
+.section.portfolio {
+  padding: 120px 0;
+}
+
+.portfolio-title {
+  text-align: center;
+  margin-bottom: 72px;
+  font-size: 36px;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+  color: #2e2f42;
+}
+
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 48px;
+  justify-content: space-between;
+}
+
+.portfolio-item {
+  width: calc((100% - 48px) / 3);
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover,
+.portfolio-item:focus-within {
+  box-shadow: 0px 1px 6px rgba(46,47,66,0.08),
+              0px 1px 1px rgba(46,47,66,0.16),
+              0px 2px 1px rgba(46,47,66,0.08);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #f4f4fd;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ----------------- Apps ----------------- */
+.section.apps {
+  padding: 120px 0;
+}
+
+.apps-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.app-card {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-card img {
+  display: block;
+  width: 100%;
+}
+
+.app-overlay {
+  position: absolute;
+  top: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  padding: 40px 32px;
+  background-color: #4d5ae5;
+  height: 100%;
+  width: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ----------------- Footer ----------------- */
+.footer {
+  background-color: #2e2f42;
+  color: white;
+  padding: 100px 0;
+}
+
+.footer .container {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.footer-content {
+  margin-right: 120px;
+}
+
+.footer-text {
+  font-size: 1rem;
+  max-width: 264px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+}
+
+.footer-social {
+  flex-grow: 1;
+}
+
+.footer-social p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.footer-social .social-list {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-social .social-item {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-social a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social a:hover,
+.footer-social a:focus {
+  background-color: #31d0aa;
 }
 
 /* Розміри SVG задаються через HTML */
