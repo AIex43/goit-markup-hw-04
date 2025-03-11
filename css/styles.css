@@ -15,13 +15,14 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* Анімація для всіх посилань */
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button {
   cursor: pointer;
   border: none;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -34,8 +35,8 @@ body {
 .container {
   width: 1158px;
   margin: 0 auto;
-  padding: 0 15px;
   box-sizing: border-box;
+  padding: 0 15px;
 }
 
 img {
@@ -44,19 +45,19 @@ img {
   height: auto;
 }
 
-/* Глобальне правило для SVG (крім .no-fill) */
+/* Глобальне правило для SVG (за винятком іконок з класом .no-fill) */
 svg:not(.no-fill) {
   fill: currentColor;
 }
 
 /* Хедер */
 .header {
-  padding: 0 15px;
+  color: white;
   border-bottom: 1px solid #e7e9fc;
-  box-shadow: 0px 2px 1px rgba(46,47,66,0.08),
-              0px 1px 1px rgba(46,47,66,0.16),
-              0px 1px 6px rgba(46,47,66,0.08);
-  color: #ffffff;
+  padding: 0 15px;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+              0px 1px 1px rgba(46, 47, 66, 0.16),
+              0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -76,14 +77,21 @@ svg:not(.no-fill) {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 18px;
-  text-transform: uppercase;
+  line-height: 1.17;
   letter-spacing: 0.03em;
+  text-transform: uppercase;
   color: #4d5ae5;
+  display: inline-block;
   margin-right: 76px;
 }
 
+.logo span,
 .logo-span {
   color: #2e2f42;
+}
+
+.footer .logo span {
+  color: #f4f4fd;
 }
 
 .menu {
@@ -93,24 +101,27 @@ svg:not(.no-fill) {
 
 .menu-link {
   padding: 24px 0;
-  font-size: 16px;
+  display: block;
   font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
-  position: relative;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.menu-link.active {
+.menu-item:first-child .menu-link {
+  position: relative;
   color: #404bbf;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.menu-link.active::after {
-  content: "";
+.menu-item:first-child .menu-link::after {
+  content: '';
   position: absolute;
+  width: 100%;
   left: 0;
   bottom: -1px;
-  width: 100%;
   height: 4px;
   background-color: #404bbf;
   border-radius: 2px;
@@ -121,10 +132,6 @@ svg:not(.no-fill) {
   color: #404bbf;
 }
 
-.address {
-  font-style: normal;
-}
-
 .contacts {
   display: flex;
   gap: 40px;
@@ -132,6 +139,7 @@ svg:not(.no-fill) {
 
 .contact-link {
   font-size: 16px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -142,19 +150,35 @@ svg:not(.no-fill) {
   color: #404bbf;
 }
 
-/* Hero */
+.address {
+  font-style: normal;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  overflow: hidden;
+}
+
+/* Секція hero */
 .hero {
   max-width: 1440px;
   margin: 0 auto;
   background-image: linear-gradient(
-      rgba(46,47,66,0.7),
-      rgba(46,47,66,0.7)
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
     ),
-    url(./images/img-name.jpeg);
+    url(../images/img-name.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  color: #ffffff;
+  color: white;
   text-align: center;
   padding: 188px 0;
 }
@@ -163,6 +187,7 @@ svg:not(.no-fill) {
   font-size: 56px;
   line-height: 1.07;
   letter-spacing: 0.02em;
+  color: #ffffff;
   margin: 0 auto 20px;
   max-width: 496px;
 }
@@ -172,8 +197,8 @@ svg:not(.no-fill) {
   height: 56px;
   background-color: #4d5ae5;
   border-radius: 4px;
-  font-size: 16px;
   font-weight: 500;
+  font-size: 16px;
   letter-spacing: 0.04em;
   color: #ffffff;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -184,7 +209,37 @@ svg:not(.no-fill) {
   background-color: #404bbf;
 }
 
-/* Features */
+/* Секція services */
+.services {
+  padding: 120px 0;
+}
+
+.services-list {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.services-item {
+  width: calc((100% - 72px) / 4);
+  box-sizing: border-box;
+}
+
+.services-title {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+}
+
+.services-desc {
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: #434455;
+}
+
+/* Секція features */
 .features {
   padding: 120px 0;
 }
@@ -208,15 +263,9 @@ svg:not(.no-fill) {
   border-radius: 4px;
   border: 1px solid #8e8f99;
   margin-bottom: 8px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.icon-container:hover,
-.icon-container:focus {
-  background-color: #404bbf;
-}
-
-/* Team */
+/* Секція team */
 .team {
   padding: 120px 0;
   background-color: #f4f4fd;
@@ -224,11 +273,11 @@ svg:not(.no-fill) {
 
 .team-title {
   text-align: center;
-  font-size: 36px;
-  text-transform: capitalize;
-  letter-spacing: 0.02em;
-  color: #2e2f42;
   margin-bottom: 72px;
+  font-size: 36px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #2e2f42;
 }
 
 .team-list {
@@ -240,15 +289,14 @@ svg:not(.no-fill) {
 .team-item {
   width: calc((100% - 72px) / 4);
   text-align: center;
-  box-shadow: 0px 1px 6px rgba(46,47,66,0.08),
-              0px 1px 1px rgba(46,47,66,0.16),
-              0px 2px 1px rgba(46,47,66,0.08);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+              0px 1px 1px rgba(46, 47, 66, 0.16),
+              0px 2px 1px rgba(46, 47, 66, 0.08);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Перший елемент команди з додатковим border-radius */
 .team-item:first-child {
-  border-radius: 0 0 4px 4px;
+  border-radius: 0px 0px 4px 4px;
 }
 
 .team-info {
@@ -286,12 +334,61 @@ svg:not(.no-fill) {
   background-color: #404bbf;
 }
 
-.team-social svg,
-.footer-social svg {
-  fill: #f4f4fd;
+/* Секція portfolio */
+.portfolio {
+  padding: 120px 0;
 }
 
-/* Apps */
+.portfolio-title {
+  text-align: center;
+  margin-bottom: 72px;
+  font-size: 36px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #2e2f42;
+}
+
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 48px;
+  justify-content: space-between;
+}
+
+.portfolio-item {
+  width: calc((100% - 48px) / 3);
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover,
+.portfolio-item:focus-within {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+              0px 1px 1px rgba(46, 47, 66, 0.16),
+              0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #f4f4fd;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Секція apps */
 .apps {
   padding: 120px 0;
 }
@@ -310,8 +407,8 @@ svg:not(.no-fill) {
 }
 
 .app-card img {
-  width: 100%;
   display: block;
+  width: 100%;
 }
 
 .app-overlay {
@@ -329,14 +426,10 @@ svg:not(.no-fill) {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.app-card:hover .app-overlay {
-  transform: translateY(0%);
-}
-
 /* Футер */
 .footer {
   background-color: #2e2f42;
-  color: #ffffff;
+  color: white;
   padding: 100px 0;
 }
 
@@ -365,6 +458,7 @@ svg:not(.no-fill) {
 .footer-social p {
   font-weight: 500;
   font-size: 16px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
   color: #ffffff;
   margin-bottom: 16px;
@@ -395,3 +489,18 @@ svg:not(.no-fill) {
 .footer-social a:focus {
   background-color: #31d0aa;
 }
+
+/* ----------------------------- */
+/* Додаткові правила для ховера */
+/* ----------------------------- */
+
+/* При ховері на картці портфоліо оверлей з'являється */
+.portfolio-item:hover .portfolio-overlay,
+.portfolio-item:focus-within .portfolio-overlay {
+  transform: translateY(0);
+}
+
+/* При ховері на картці додатків оверлей з'являється */
+.app-card:hover .app-overlay {
+  transform: translateY(0);
+} 
