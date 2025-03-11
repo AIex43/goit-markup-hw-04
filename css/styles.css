@@ -461,7 +461,7 @@ svg:not(.no-fill) {
     transform: translateY(0%);
 }
 
-.app-card:hover .app-overlay {
+.app-card:hover ~ .app-overlay {
   transform: translateY(0%);
 }
 
