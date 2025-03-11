@@ -307,12 +307,6 @@ svg:not(.no-fill) {
 }
 
 
-.social-item {
-  width: 40px;
-  height: 40px;
-  fill: #f4f4fd;
-}
-
 .social-link {
   display: flex;
   width: 100%;
@@ -571,8 +565,9 @@ svg:not(.no-fill) {
 }
 
 .social-item {
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
+  fill: #f4f4fd;
 }
 
 .social-link {
@@ -591,9 +586,5 @@ svg:not(.no-fill) {
   background-color: #404bbf;
 }
 
-.social-icon {
-  width: 24px;
-  height: 24px;
-  fill: #f4f4fd;
-}
+
 
