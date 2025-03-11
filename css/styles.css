@@ -305,18 +305,15 @@ svg:not(.no-fill) {
   background-color: #ffffff;
 }
 
-.team-social {
-  /* додаткове оформлення за потребою */
-}
-
 /* Список соцмереж у секції team */
-.team-social ul.social-list {
+.social-list {
   display: flex;
   justify-content: center;
   gap: 24px;
+  margin-top: 16px;
 }
 
-.team-social .social-item {
+.social-item {
   width: 40px;
   height: 40px;
 }
@@ -508,3 +505,4 @@ svg:not(.no-fill) {
 .app-card:hover .app-overlay {
   transform: translateY(0);
 }
+
