@@ -34,8 +34,8 @@ body {
 .container {
   width: 1158px;
   margin: 0 auto;
-  box-sizing: border-box;
   padding: 0 15px;
+  box-sizing: border-box;
 }
 
 img {
@@ -44,19 +44,19 @@ img {
   height: auto;
 }
 
-/* Глобальне правило для SVG (крім тих, що з класом .no-fill) */
+/* Глобальне правило для SVG (крім .no-fill) */
 svg:not(.no-fill) {
   fill: currentColor;
 }
 
 /* Хедер */
 .header {
-  color: white;
-  border-bottom: 1px solid #e7e9fc;
   padding: 0 15px;
-  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16),
-    0px 1px 6px rgba(46, 47, 66, 0.08);
+  border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46,47,66,0.08),
+              0px 1px 1px rgba(46,47,66,0.16),
+              0px 1px 6px rgba(46,47,66,0.08);
+  color: #ffffff;
 }
 
 .header-container {
@@ -76,21 +76,14 @@ svg:not(.no-fill) {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 18px;
-  line-height: 1.17;
-  letter-spacing: 0.03em;
   text-transform: uppercase;
+  letter-spacing: 0.03em;
   color: #4d5ae5;
-  display: inline-block;
   margin-right: 76px;
 }
 
-.logo span,
 .logo-span {
   color: #2e2f42;
-}
-
-.footer .logo span {
-  color: #f4f4fd;
 }
 
 .menu {
@@ -100,17 +93,14 @@ svg:not(.no-fill) {
 
 .menu-link {
   padding: 24px 0;
-  display: block;
-  font-weight: 500;
   font-size: 16px;
-  line-height: 1.5;
+  font-weight: 500;
   letter-spacing: 0.02em;
   color: #2e2f42;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Активне посилання в головній навігації */
 .menu-link.active {
   color: #404bbf;
 }
@@ -118,9 +108,9 @@ svg:not(.no-fill) {
 .menu-link.active::after {
   content: "";
   position: absolute;
-  width: 100%;
   left: 0;
   bottom: -1px;
+  width: 100%;
   height: 4px;
   background-color: #404bbf;
   border-radius: 2px;
@@ -131,6 +121,10 @@ svg:not(.no-fill) {
   color: #404bbf;
 }
 
+.address {
+  font-style: normal;
+}
+
 .contacts {
   display: flex;
   gap: 40px;
@@ -138,7 +132,6 @@ svg:not(.no-fill) {
 
 .contact-link {
   font-size: 16px;
-  line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -149,35 +142,19 @@ svg:not(.no-fill) {
   color: #404bbf;
 }
 
-.address {
-  font-style: normal;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  overflow: hidden;
-}
-
-/* Секція hero */
+/* Hero */
 .hero {
   max-width: 1440px;
   margin: 0 auto;
   background-image: linear-gradient(
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
+      rgba(46,47,66,0.7),
+      rgba(46,47,66,0.7)
     ),
-    url(../images/img-name.jpeg);
+    url(./images/img-name.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  color: white;
+  color: #ffffff;
   text-align: center;
   padding: 188px 0;
 }
@@ -186,7 +163,6 @@ svg:not(.no-fill) {
   font-size: 56px;
   line-height: 1.07;
   letter-spacing: 0.02em;
-  color: #ffffff;
   margin: 0 auto 20px;
   max-width: 496px;
 }
@@ -196,8 +172,8 @@ svg:not(.no-fill) {
   height: 56px;
   background-color: #4d5ae5;
   border-radius: 4px;
-  font-weight: 500;
   font-size: 16px;
+  font-weight: 500;
   letter-spacing: 0.04em;
   color: #ffffff;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -208,37 +184,7 @@ svg:not(.no-fill) {
   background-color: #404bbf;
 }
 
-/* Секція services */
-.services {
-  padding: 120px 0;
-}
-
-.services-list {
-  display: flex;
-  gap: 24px;
-  justify-content: space-between;
-}
-
-.services-item {
-  width: calc((100% - 72px) / 4);
-  box-sizing: border-box;
-}
-
-.services-title {
-  margin-bottom: 8px;
-  font-weight: 500;
-  font-size: 20px;
-  letter-spacing: 0.02em;
-  color: #2e2f42;
-}
-
-.services-desc {
-  font-size: 16px;
-  letter-spacing: 0.02em;
-  color: #434455;
-}
-
-/* Секція features */
+/* Features */
 .features {
   padding: 120px 0;
 }
@@ -270,7 +216,7 @@ svg:not(.no-fill) {
   background-color: #404bbf;
 }
 
-/* Секція team */
+/* Team */
 .team {
   padding: 120px 0;
   background-color: #f4f4fd;
@@ -278,11 +224,11 @@ svg:not(.no-fill) {
 
 .team-title {
   text-align: center;
-  margin-bottom: 72px;
   font-size: 36px;
-  letter-spacing: 0.02em;
   text-transform: capitalize;
+  letter-spacing: 0.02em;
   color: #2e2f42;
+  margin-bottom: 72px;
 }
 
 .team-list {
@@ -294,13 +240,13 @@ svg:not(.no-fill) {
 .team-item {
   width: calc((100% - 72px) / 4);
   text-align: center;
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16),
-    0px 2px 1px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 1px 6px rgba(46,47,66,0.08),
+              0px 1px 1px rgba(46,47,66,0.16),
+              0px 2px 1px rgba(46,47,66,0.08);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Перший елемент списку команди має додатковий border-radius */
+/* Перший елемент команди з додатковим border-radius */
 .team-item:first-child {
   border-radius: 0 0 4px 4px;
 }
@@ -340,13 +286,12 @@ svg:not(.no-fill) {
   background-color: #404bbf;
 }
 
-/* Задання кольору для SVG-іконок соцмереж */
 .team-social svg,
 .footer-social svg {
   fill: #f4f4fd;
 }
 
-/* Секція apps */
+/* Apps */
 .apps {
   padding: 120px 0;
 }
@@ -365,8 +310,8 @@ svg:not(.no-fill) {
 }
 
 .app-card img {
-  display: block;
   width: 100%;
+  display: block;
 }
 
 .app-overlay {
@@ -391,7 +336,7 @@ svg:not(.no-fill) {
 /* Футер */
 .footer {
   background-color: #2e2f42;
-  color: white;
+  color: #ffffff;
   padding: 100px 0;
 }
 
@@ -420,7 +365,6 @@ svg:not(.no-fill) {
 .footer-social p {
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.5;
   letter-spacing: 0.02em;
   color: #ffffff;
   margin-bottom: 16px;
@@ -446,6 +390,12 @@ svg:not(.no-fill) {
   justify-content: center;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.footer-social a:hover,
+.footer-social a:focus {
+  background-color: #31d0aa;
+}
+
 
 .footer-social a:hover,
 .footer-social a:focus {
