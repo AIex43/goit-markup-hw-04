@@ -574,7 +574,8 @@ svg:not(.no-fill) {
 
 .social-list {
   display: flex;
-  gap: 16px;
+  gap: 24px; 
+ 
 }
 
 .social-item {
@@ -595,12 +596,12 @@ svg:not(.no-fill) {
 
 .social-link:hover,
 .social-link:focus {
-  background-color: #31d0aa;
+  background-color: #404bbf;
 }
 
 .social-icon {
   width: 24px;
   height: 24px;
-  fill: var(--icon-color, #f4f4fd);
+  fill: #f4f4fd;
 }
 
