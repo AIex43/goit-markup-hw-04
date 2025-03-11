@@ -490,10 +490,7 @@ svg:not(.no-fill) {
   background-color: #31d0aa;
 }
 
-/* ----------------------------- */
 /* Додаткові правила для ховера */
-/* ----------------------------- */
-
 /* При ховері на картці портфоліо оверлей з'являється */
 .portfolio-item:hover .portfolio-overlay,
 .portfolio-item:focus-within .portfolio-overlay {
