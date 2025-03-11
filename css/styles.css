@@ -460,7 +460,7 @@ svg:not(.no-fill) {
 }
 
 .app-card:hover .app-overlay {
-  transform: translateY(0);
+  transform: translateY(0%);
 }
 
 .overlay-text {
