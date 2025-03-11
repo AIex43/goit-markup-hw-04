@@ -1,5 +1,16 @@
 /* Загальні стилі */
-h1, h2, h3, p, ul {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul {
   margin: 0;
   padding: 0;
 }
@@ -11,13 +22,13 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button {
   cursor: pointer;
   border: none;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -30,7 +41,6 @@ body {
 .container {
   width: 1158px;
   margin: 0 auto;
-  box-sizing: border-box;
   padding: 0 15px;
 }
 
@@ -40,19 +50,19 @@ img {
   height: auto;
 }
 
-/* Глобальне правило для SVG (за винятком .no-fill) */
+/* Глобальне правило для SVG (крім .no-fill) */
 svg:not(.no-fill) {
   fill: currentColor;
 }
 
-/* Хедер */
+/* Header */
 .header {
-  color: white;
+  color: #ffffff;
   border-bottom: 1px solid #e7e9fc;
   padding: 0 15px;
-  box-shadow: 0px 2px 1px rgba(46,47,66,0.08),
-              0px 1px 1px rgba(46,47,66,0.16),
-              0px 1px 6px rgba(46,47,66,0.08);
+  box-shadow: 0 2px 1px rgba(46, 47, 66, 0.08),
+    0 1px 1px rgba(46, 47, 66, 0.16),
+    0 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -79,12 +89,11 @@ svg:not(.no-fill) {
   margin-right: 76px;
 }
 
-.logo span,
 .logo-span {
   color: #2e2f42;
 }
 
-.footer .logo span {
+.footer .logo-span {
   color: #f4f4fd;
 }
 
@@ -101,16 +110,15 @@ svg:not(.no-fill) {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
-  transition: color 250ms cubic-bezier(0.4,0,0.2,1);
 }
 
-.menu-item:first-child .menu-link {
+.menu-item.current .menu-link {
   position: relative;
   color: #404bbf;
 }
 
-.menu-item:first-child .menu-link::after {
-  content: '';
+.menu-item.current .menu-link::after {
+  content: "";
   position: absolute;
   width: 100%;
   left: 0;
@@ -135,7 +143,7 @@ svg:not(.no-fill) {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
-  transition: color 250ms cubic-bezier(0.4,0,0.2,1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-link:hover,
@@ -159,21 +167,21 @@ svg:not(.no-fill) {
   overflow: hidden;
 }
 
-/* Секція hero */
+/* Hero Section */
 .hero {
   max-width: 1440px;
   margin: 0 auto;
   background-image: linear-gradient(
-      rgba(46,47,66,0.7),
-      rgba(46,47,66,0.7)
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
     ),
-    url(../images/img-name.jpeg);
+    url("../images/img-name.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   text-align: center;
   padding: 188px 0;
-  color: white;
+  color: #ffffff;
 }
 
 .hero-title {
@@ -194,7 +202,6 @@ svg:not(.no-fill) {
   font-size: 16px;
   letter-spacing: 0.04em;
   color: #ffffff;
-  transition: background-color 250ms cubic-bezier(0.4,0,0.2,1);
 }
 
 .hero-button:hover,
@@ -202,7 +209,22 @@ svg:not(.no-fill) {
   background-color: #404bbf;
 }
 
-/* Секція services */
+/* Advantages Section */
+.advantages {
+  padding: 60px 0;
+}
+
+.advantages-list {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.advantages-item {
+  text-align: center;
+}
+
+/* Services Section */
 .services {
   padding: 120px 0;
 }
@@ -215,36 +237,13 @@ svg:not(.no-fill) {
 
 .services-item {
   width: calc((100% - 72px) / 4);
-  box-sizing: border-box;
-}
-
-.services-title {
-  margin-bottom: 8px;
-  font-weight: 500;
-  font-size: 20px;
-  letter-spacing: 0.02em;
-  color: #2e2f42;
-}
-
-.services-desc {
-  font-size: 16px;
-  letter-spacing: 0.02em;
-  color: #434455;
-}
-
-/* Секція features */
-.features {
-  padding: 120px 0;
-}
-
-.features-list {
-  display: flex;
-  gap: 24px;
-  justify-content: space-between;
 }
 
 .features-item {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
 .icon-container {
@@ -258,7 +257,7 @@ svg:not(.no-fill) {
   margin-bottom: 8px;
 }
 
-/* Секція team */
+/* Team Section */
 .team {
   padding: 120px 0;
   background-color: #f4f4fd;
@@ -282,15 +281,10 @@ svg:not(.no-fill) {
 .team-member {
   width: calc((100% - 72px) / 4);
   text-align: center;
-  box-shadow: 0px 1px 6px rgba(46,47,66,0.08),
-              0px 1px 1px rgba(46,47,66,0.16),
-              0px 2px 1px rgba(46,47,66,0.08);
-  transition: box-shadow 250ms cubic-bezier(0.4,0,0.2,1);
-}
-
-/* Специфічні стилі для першого елемента команди */
-.team-list > li:first-child {
-  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0 1px 6px rgba(46, 47, 66, 0.08),
+    0 1px 1px rgba(46, 47, 66, 0.16),
+    0 2px 1px rgba(46, 47, 66, 0.08);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-info {
@@ -299,7 +293,7 @@ svg:not(.no-fill) {
   border: 1px solid #e7e9fc;
 }
 
-/* Список соцмереж */
+/* Social Icons */
 .social-list {
   display: flex;
   justify-content: center;
@@ -319,7 +313,7 @@ svg:not(.no-fill) {
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  transition: background-color 250ms cubic-bezier(0.4,0,0.2,1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -331,7 +325,7 @@ svg:not(.no-fill) {
   fill: #f4f4fd;
 }
 
-/* Секція portfolio */
+/* Portfolio Section */
 .portfolio {
   padding: 120px 0;
 }
@@ -354,17 +348,16 @@ svg:not(.no-fill) {
 
 .portfolio-item {
   width: calc((100% - 48px) / 3);
-  box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  transition: box-shadow 250ms cubic-bezier(0.4,0,0.2,1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item:hover,
 .portfolio-item:focus-within {
-  box-shadow: 0px 1px 6px rgba(46,47,66,0.08),
-              0px 1px 1px rgba(46,47,66,0.16),
-              0px 2px 1px rgba(46,47,66,0.08);
+  box-shadow: 0 1px 6px rgba(46, 47, 66, 0.08),
+    0 1px 1px rgba(46, 47, 66, 0.16),
+    0 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-overlay {
@@ -375,7 +368,7 @@ svg:not(.no-fill) {
   height: 100%;
   background-color: #4d5ae5;
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4,0,0.2,1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -385,12 +378,15 @@ svg:not(.no-fill) {
   padding: 20px;
 }
 
+.portfolio-item:hover .portfolio-overlay,
+.portfolio-item:focus-within .portfolio-overlay {
+  transform: translateY(0);
+}
 
-
-/* Футер */
+/* Footer */
 .footer {
   background-color: #2e2f42;
-  color: white;
+  color: #ffffff;
   padding: 100px 0;
 }
 
@@ -443,20 +439,10 @@ svg:not(.no-fill) {
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  transition: background-color 250ms cubic-bezier(0.4,0,0.2,1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-social a:hover,
 .footer-social a:focus {
   background-color: #31d0aa;
-}
-
-/* Ховер для portfolio та apps */
-.portfolio-item:hover .portfolio-overlay,
-.portfolio-item:focus-within .portfolio-overlay {
-  transform: translateY(0);
-}
-
-.app-card:hover .app-overlay {
-  transform: translateY(0);
 }
