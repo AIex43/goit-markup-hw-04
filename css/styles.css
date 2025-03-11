@@ -306,9 +306,6 @@ svg:not(.no-fill) {
   gap: 24px;
 }
 
-.social-icon {
-  fill: #f4f4fd;
-}
 
 .social-item {
   width: 40px;
@@ -433,11 +430,6 @@ svg:not(.no-fill) {
   gap: 16px;
 }
 
-.footer-social .social-item {
-  width: 40px;
-  height: 40px;
- fill: #f4f4fd;
-}
 
 .footer-social a {
   display: flex;
