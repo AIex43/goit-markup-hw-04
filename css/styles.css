@@ -40,10 +40,7 @@ img {
   height: auto;
 }
 
-/* Глобальне правило для SVG (за винятком .no-fill) */
-svg:not(.no-fill) {
-  fill: currentColor;
-}
+
 
 /* Хедер */
 .header {
