@@ -1,4 +1,4 @@
- /* Загальні стилі */
+  /* Загальні стилі */
 h1, h2, h3, p, ul {
   margin: 0;
   padding: 0;
@@ -252,7 +252,6 @@ svg:not(.no-fill) {
   align-items: center;
   justify-content: center;
   height: 112px;
-  background-color: #f4f4fd;
   border: 1px solid #8e8f99;
   border-radius: 4px;
   margin-bottom: 8px;
