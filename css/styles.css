@@ -1,4 +1,4 @@
-  /* Загальні стилі */
+ /* Загальні стилі */
 h1, h2, h3, p, ul {
   margin: 0;
   padding: 0;
@@ -85,7 +85,7 @@ svg:not(.no-fill) {
 }
 
 .footer .logo span {
-  color: #f4f4fd;
+ 
 }
 
 .menu {
@@ -260,7 +260,7 @@ svg:not(.no-fill) {
 /* Секція team */
 .team {
   padding: 120px 0;
-  background-color: #f4f4fd;
+
 }
 
 .team-title {
@@ -373,7 +373,7 @@ svg:not(.no-fill) {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #f4f4fd;
+
   text-align: center;
   padding: 20px;
 }
@@ -402,7 +402,7 @@ svg:not(.no-fill) {
   max-width: 264px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: #f4f4fd;
+
 }
 
 .footer-social {
@@ -456,7 +456,7 @@ svg:not(.no-fill) {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--text-color, #f4f4fd);
+ 
   padding: 40px 32px;
   background-color: #4d5ae5;
   height: 100%;
@@ -486,7 +486,7 @@ svg:not(.no-fill) {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--text-color, #f4f4fd);
+
   padding: 40px 32px;
   background-color: #4d5ae5;
   height: 100%;
@@ -536,7 +536,7 @@ svg:not(.no-fill) {
 }
 
 .footer-text {
-  color: #f4f4fd;
+
   font-size: 16px;
   line-height: 1.5;
   margin-top: 8px;
