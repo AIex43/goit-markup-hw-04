@@ -309,6 +309,7 @@ svg:not(.no-fill) {
 
 .social-link {
   display: flex;
+  fill: #f4f4fd;
   width: 100%;
   height: 100%;
   background-color: #4d5ae5;
