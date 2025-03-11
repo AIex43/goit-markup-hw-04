@@ -1,9 +1,5 @@
 /* Загальні стилі */
-h1,
-h2,
-h3,
-p,
-ul {
+h1, h2, h3, p, ul {
   margin: 0;
   padding: 0;
 }
@@ -15,7 +11,6 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
-  /* Анімація для всіх посилань */
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -45,7 +40,7 @@ img {
   height: auto;
 }
 
-/* Глобальне правило для SVG (за винятком іконок з класом .no-fill) */
+/* Глобальне правило для SVG (за винятком .no-fill) */
 svg:not(.no-fill) {
   fill: currentColor;
 }
@@ -55,9 +50,9 @@ svg:not(.no-fill) {
   color: white;
   border-bottom: 1px solid #e7e9fc;
   padding: 0 15px;
-  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
-              0px 1px 1px rgba(46, 47, 66, 0.16),
-              0px 1px 6px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 2px 1px rgba(46,47,66,0.08),
+              0px 1px 1px rgba(46,47,66,0.16),
+              0px 1px 6px rgba(46,47,66,0.08);
 }
 
 .header-container {
@@ -81,7 +76,6 @@ svg:not(.no-fill) {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
-  display: inline-block;
   margin-right: 76px;
 }
 
@@ -107,13 +101,12 @@ svg:not(.no-fill) {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4,0,0.2,1);
 }
 
 .menu-item:first-child .menu-link {
   position: relative;
   color: #404bbf;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-item:first-child .menu-link::after {
@@ -142,7 +135,7 @@ svg:not(.no-fill) {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4,0,0.2,1);
 }
 
 .contact-link:hover,
@@ -171,25 +164,25 @@ svg:not(.no-fill) {
   max-width: 1440px;
   margin: 0 auto;
   background-image: linear-gradient(
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
+      rgba(46,47,66,0.7),
+      rgba(46,47,66,0.7)
     ),
     url(../images/img-name.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  color: white;
   text-align: center;
   padding: 188px 0;
+  color: white;
 }
 
 .hero-title {
   font-size: 56px;
   line-height: 1.07;
   letter-spacing: 0.02em;
-  color: #ffffff;
   margin: 0 auto 20px;
   max-width: 496px;
+  color: #ffffff;
 }
 
 .hero-button {
@@ -201,7 +194,7 @@ svg:not(.no-fill) {
   font-size: 16px;
   letter-spacing: 0.04em;
   color: #ffffff;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4,0,0.2,1);
 }
 
 .hero-button:hover,
@@ -260,8 +253,8 @@ svg:not(.no-fill) {
   justify-content: center;
   height: 112px;
   background-color: #f4f4fd;
-  border-radius: 4px;
   border: 1px solid #8e8f99;
+  border-radius: 4px;
   margin-bottom: 8px;
 }
 
@@ -289,28 +282,28 @@ svg:not(.no-fill) {
 .team-item {
   width: calc((100% - 72px) / 4);
   text-align: center;
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-              0px 1px 1px rgba(46, 47, 66, 0.16),
-              0px 2px 1px rgba(46, 47, 66, 0.08);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 1px 6px rgba(46,47,66,0.08),
+              0px 1px 1px rgba(46,47,66,0.16),
+              0px 2px 1px rgba(46,47,66,0.08);
+  transition: box-shadow 250ms cubic-bezier(0.4,0,0.2,1);
 }
 
-.team-item:first-child {
+/* Специфічні стилі для першого елемента команди */
+.team-list > li:first-child {
   border-radius: 0px 0px 4px 4px;
 }
 
 .team-info {
   padding: 32px 0;
-  border: 1px solid #e7e9fc;
   background-color: #ffffff;
+  border: 1px solid #e7e9fc;
 }
 
-/* Список соцмереж у секції team */
+/* Список соцмереж */
 .social-list {
   display: flex;
   justify-content: center;
   gap: 24px;
-  margin-top: 16px;
 }
 
 .social-item {
@@ -326,7 +319,7 @@ svg:not(.no-fill) {
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4,0,0.2,1);
 }
 
 .social-link:hover,
@@ -362,16 +355,16 @@ svg:not(.no-fill) {
 .portfolio-item {
   width: calc((100% - 48px) / 3);
   box-sizing: border-box;
-  overflow: hidden;
   position: relative;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  transition: box-shadow 250ms cubic-bezier(0.4,0,0.2,1);
 }
 
 .portfolio-item:hover,
 .portfolio-item:focus-within {
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-              0px 1px 1px rgba(46, 47, 66, 0.16),
-              0px 2px 1px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 1px 6px rgba(46,47,66,0.08),
+              0px 1px 1px rgba(46,47,66,0.16),
+              0px 2px 1px rgba(46,47,66,0.08);
 }
 
 .portfolio-overlay {
@@ -382,7 +375,7 @@ svg:not(.no-fill) {
   height: 100%;
   background-color: #4d5ae5;
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4,0,0.2,1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -407,27 +400,27 @@ svg:not(.no-fill) {
 .app-card {
   position: relative;
   overflow: hidden;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4,0,0.2,1);
 }
 
 .app-card img {
-  display: block;
   width: 100%;
+  display: block;
 }
 
 .app-overlay {
   position: absolute;
   top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 32px;
+  background-color: #4d5ae5;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #f4f4fd;
-  padding: 40px 32px;
-  background-color: #4d5ae5;
-  height: 100%;
-  width: 100%;
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4,0,0.2,1);
 }
 
 /* Футер */
@@ -486,7 +479,7 @@ svg:not(.no-fill) {
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4,0,0.2,1);
 }
 
 .footer-social a:hover,
@@ -494,15 +487,12 @@ svg:not(.no-fill) {
   background-color: #31d0aa;
 }
 
-/* Додаткові правила для ховера */
-/* При ховері на картці портфоліо оверлей з'являється */
+/* Ховер для portfolio та apps */
 .portfolio-item:hover .portfolio-overlay,
 .portfolio-item:focus-within .portfolio-overlay {
   transform: translateY(0);
 }
 
-/* При ховері на картці додатків оверлей з'являється */
 .app-card:hover .app-overlay {
   transform: translateY(0);
 }
-
