@@ -7,24 +7,422 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Raleway:wght@700&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Загальні стилі */
+    h1, h2, h3, p, ul {
+      margin: 0;
+      padding: 0;
+    }
+    ul {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    body {
+      font-family: "Roboto", sans-serif;
+      line-height: 1.5;
+      background-color: #ffffff;
+      color: #434455;
+    }
+    .container {
+      width: 1158px;
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding: 0 15px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    /* Хедер */
+    .header {
+      color: white;
+      border-bottom: 1px solid #e7e9fc;
+      padding: 0 15px;
+      box-shadow: 0px 2px 1px rgba(46,47,66,0.08),
+                  0px 1px 1px rgba(46,47,66,0.16),
+                  0px 1px 6px rgba(46,47,66,0.08);
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0 15px;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+      font-family: "Raleway", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.17;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #4d5ae5;
+      margin-right: 76px;
+    }
+    .logo span,
+    .logo-span {
+      color: #2e2f42;
+    }
+    .footer .logo span {
+      color: #f4f4fd;
+    }
+    .menu {
+      display: flex;
+      gap: 40px;
+    }
+    .menu-link {
+      padding: 24px 0;
+      display: block;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+      color: #2e2f42;
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .menu-item:first-child .menu-link {
+      position: relative;
+      color: #404bbf;
+    }
+    .menu-item:first-child .menu-link::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: -1px;
+      height: 4px;
+      background-color: #404bbf;
+      border-radius: 2px;
+    }
+    .menu-link:hover,
+    .menu-link:focus {
+      color: #404bbf;
+    }
+    .contacts {
+      display: flex;
+      gap: 40px;
+    }
+    .contact-link {
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+      color: #434455;
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .contact-link:hover,
+    .contact-link:focus {
+      color: #404bbf;
+    }
+    .address {
+      font-style: normal;
+    }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+      clip-path: inset(100%);
+      overflow: hidden;
+    }
+    /* Секція hero */
+    .hero {
+      max-width: 1440px;
+      margin: 0 auto;
+      background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+                        url("../images/people-office-1.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+      padding: 188px 0;
+      color: white;
+    }
+    .hero-title {
+      font-size: 56px;
+      line-height: 1.07;
+      letter-spacing: 0.02em;
+      margin: 0 auto 20px;
+      max-width: 496px;
+      color: #ffffff;
+      margin-bottom: 50px;
+    }
+    .hero-button {
+      min-width: 169px;
+      height: 56px;
+      background-color: #4d5ae5;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: 0.04em;
+      color: #ffffff;
+      text-align: center;
+      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .hero-button:hover,
+    .hero-button:focus {
+      background-color: #404bbf;
+    }
+    /* Секція services */
+    .services {
+      padding: 120px 0;
+    }
+    .services-list {
+      display: flex;
+      gap: 24px;
+      justify-content: space-between;
+    }
+    .services-item {
+      width: calc((100% - 72px) / 4);
+      box-sizing: border-box;
+    }
+    .services-title {
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 20px;
+      letter-spacing: 0.02em;
+      color: #2e2f42;
+    }
+    .services-desc {
+      font-size: 16px;
+      letter-spacing: 0.02em;
+      color: #434455;
+    }
+    /* Перенесені стилі для .features-item (секція services) */
+    .services-item .features-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 112px;
+      background-color: #f4f4fd;
+      border-radius: 4px;
+      border: 1px solid #8e8f99;
+      margin-bottom: 8px;
+    }
+    /* Секція features */
+    .features {
+      padding: 120px 0;
+    }
+    .features-list {
+      display: flex;
+      gap: 24px;
+      justify-content: space-between;
+    }
+    .features-item {
+      text-align: center;
+    }
+    .icon-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 112px;
+      border: 1px solid #8e8f99;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    /* Секція team */
+    .team {
+      padding: 120px 0;
+      background-color: #f4f4fd;
+    }
+    .team-title {
+      text-align: center;
+      margin-bottom: 72px;
+      font-size: 36px;
+      letter-spacing: 0.02em;
+      text-transform: capitalize;
+      color: #2e2f42;
+    }
+    .team-list {
+      display: flex;
+      gap: 24px;
+      justify-content: space-between;
+    }
+    .team-member {
+      width: calc((100% - 72px) / 4);
+      text-align: center;
+      box-shadow: 0px 1px 6px rgba(46,47,66,0.08),
+                  0px 1px 1px rgba(46,47,66,0.16),
+                  0px 2px 1px rgba(46,47,66,0.08);
+      transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .team-list > li:first-child {
+      border-radius: 0 0 4px 4px;
+    }
+    .team-info {
+      padding: 32px 0;
+      background-color: #ffffff;
+      border: 1px solid #e7e9fc;
+    }
+    /* Список соцмереж */
+    .social-list {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+    .portfolio-info {
+      padding: 32px 16px;
+      border: 1px solid #e7e9fc;
+      border-top: none;
+      text-align: center;
+    }
+    .portfolio-name {
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+      color: #2e2f42;
+    }
+    .portfolio-category {
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+      color: #434455;
+    }
+    .social-link {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background-color: #4d5ae5;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .social-link:hover,
+    .social-link:focus {
+      background-color: #404bbf;
+    }
+    /* Секція portfolio */
+    .portfolio {
+      padding: 120px 0;
+    }
+    .portfolio-title {
+      text-align: center;
+      margin-bottom: 72px;
+      font-size: 36px;
+      letter-spacing: 0.02em;
+      text-transform: capitalize;
+      color: #2e2f42;
+    }
+    .portfolio-list {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 24px;
+      row-gap: 48px;
+      justify-content: space-between;
+    }
+    .portfolio-item {
+      width: calc((100% - 48px) / 3);
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .portfolio-item:hover,
+    .portfolio-item:focus-within {
+      box-shadow: 0px 1px 6px rgba(46,47,66,0.08),
+                  0px 1px 1px rgba(46,47,66,0.16),
+                  0px 2px 1px rgba(46,47,66,0.08);
+    }
+    .img-container {
+      position: relative;
+      overflow: hidden;
+    }
+    .overlay-text {
+      position: absolute;
+      top: 0;
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+      color: var(--text-color, #f4f4fd);
+      padding: 40px 32px;
+      background-color: #4d5ae5;
+      height: 100%;
+      width: 100%;
+      transform: translateY(100%);
+      transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .portfolio-item:hover .overlay-text,
+    .portfolio-item:focus-within .overlay-text {
+      transform: translateY(0);
+    }
+    /* Футер */
+    .footer {
+      background-color: #2e2f42;
+      color: white;
+      padding: 100px 0;
+    }
+    .footer .container {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+    .footer-content {
+      margin-right: 120px;
+    }
+    .footer-logo {
+      margin-bottom: 16px;
+      font-family: "Raleway", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.17;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #4d5ae5;
+      display: inline-block;
+      margin-right: 76px;
+    }
+    .footer-text {
+      color: #f4f4fd;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-top: 8px;
+    }
+    .footer-social {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .social-media {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+    .footer-social ul {
+      display: flex;
+      gap: 16px;
+    }
+    .social-item {
+      width: 40px;
+      height: 40px;
+    }
+    .social-icon {
+      fill: #f4f4fd;
+    }
+  </style>
 </head>
 <body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
   <header class="header">
     <div class="container header-container">
       <nav class="nav">
@@ -49,7 +447,6 @@
       </address>
     </div>
   </header>
-
   <main>
     <section id="hero" class="section hero">
       <div class="container">
@@ -57,101 +454,98 @@
         <button type="button" class="hero-button">Order Service</button>
       </div>
     </section>
-
-   <section id="services" class="section services">
-  <div class="container">
-    <h2 class="visually-hidden">Our services</h2>
-    <ul class="services-list">
-      <li class="services-item">
-        <div class="features-item" style="display: flex; align-items: center; justify-content: center; height: 112px; background-color: #f4f4fd; border-radius: 4px; border: 1px solid #8e8f99; margin-bottom: 8px;">
-          <svg width="64" height="64">
-            <use xlink:href="./images/icons.svg#icon-antenna-1"></use>
-          </svg>
-        </div>
-        <h3 class="services-title">Strategy</h3>
-        <p class="services-desc">
-          Our goal is to identify the business problem to walk away with the perfect and creative solution.
-        </p>
-      </li>
-      <li class="services-item">
-        <div class="features-item" style="display: flex; align-items: center; justify-content: center; height: 112px; background-color: #f4f4fd; border-radius: 4px; border: 1px solid #8e8f99; margin-bottom: 8px;">
-          <svg width="64" height="64">
-            <use href="./images/icons.svg#icon-clock-1"></use>
-          </svg>
-        </div>
-        <h3 class="services-title">Punctuality</h3>
-        <p class="services-desc">
-          Bring the key message to the brand's audience for the best price within the shortest possible time.
-        </p>
-      </li>
-      <li class="services-item">
-        <div class="features-item" style="display: flex; align-items: center; justify-content: center; height: 112px; background-color: #f4f4fd; border-radius: 4px; border: 1px solid #8e8f99; margin-bottom: 8px;">
-          <svg width="64" height="64">
-            <use href="./images/icons.svg#icon-diagram-1"></use>
-          </svg>
-        </div>
-        <h3 class="services-title">Diligence</h3>
-        <p class="services-desc">
-          Research and confirm brands with the strongest digital growth opportunities and minimize risk.
-        </p>
-      </li>
-      <li class="services-item">
-        <div class="features-item" style="display: flex; align-items: center; justify-content: center; height: 112px; background-color: #f4f4fd; border-radius: 4px; border: 1px solid #8e8f99; margin-bottom: 8px;">
-          <svg width="64" height="64">
-            <use href="./images/icons.svg#icon-astronaut-1"></use>
-          </svg>
-        </div>
-        <h3 class="services-title">Technologies</h3>
-        <p class="services-desc">
-          Design practice focused on digital experiences. We bring forth a deep passion for problem-solving.
-        </p>
-      </li>
-    </ul>
-  </div>
-</section>
-
-   <section id="team" class="section team">
-  <div class="container">
-    <h2 class="team-title">Our Team</h2>
-    <ul class="team-list">
-      <li class="team-member">
-        <img src="./images/img4.jpg" alt="Mark Guerrero" width="264" loading="lazy" />
-        <div class="team-info">
-          <h3 class="team-name">Mark Guerrero</h3>
-          <p class="team-role">Product Designer</p>
-          <ul class="social-list">
-            <li class="social-item">
-              <a href="#" class="social-link">
-                <svg class="social-icon" width="16" height="16">
-                  <use href="./images/icons.svg#icon-instagram-2"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social-item">
-              <a href="#" class="social-link">
-                <svg class="social-icon" width="16" height="16">
-                  <use href="./images/icons.svg#icon-Group"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social-item">
-              <a href="#" class="social-link">
-                <svg class="social-icon" width="16" height="16">
-                  <use href="./images/icons.svg#icon-facebook-1"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social-item">
-              <a href="#" class="social-link">
-                <svg class="social-icon" width="16" height="16">
-                  <use href="./images/icons.svg#icon-linkedin-1"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-          <!-- Повторюваний блок команди -->
+    <section id="services" class="section services">
+      <div class="container">
+        <h2 class="visually-hidden">Our services</h2>
+        <ul class="services-list">
+          <li class="services-item">
+            <div class="features-item">
+              <svg width="64" height="64">
+                <use href="./images/icons.svg#icon-antenna-1"></use>
+              </svg>
+            </div>
+            <h3 class="services-title">Strategy</h3>
+            <p class="services-desc">
+              Our goal is to identify the business problem to walk away with the perfect and creative solution.
+            </p>
+          </li>
+          <li class="services-item">
+            <div class="features-item">
+              <svg width="64" height="64">
+                <use href="./images/icons.svg#icon-clock-1"></use>
+              </svg>
+            </div>
+            <h3 class="services-title">Punctuality</h3>
+            <p class="services-desc">
+              Bring the key message to the brand's audience for the best price within the shortest possible time.
+            </p>
+          </li>
+          <li class="services-item">
+            <div class="features-item">
+              <svg width="64" height="64">
+                <use href="./images/icons.svg#icon-diagram-1"></use>
+              </svg>
+            </div>
+            <h3 class="services-title">Diligence</h3>
+            <p class="services-desc">
+              Research and confirm brands with the strongest digital growth opportunities and minimize risk.
+            </p>
+          </li>
+          <li class="services-item">
+            <div class="features-item">
+              <svg width="64" height="64">
+                <use href="./images/icons.svg#icon-astronaut-1"></use>
+              </svg>
+            </div>
+            <h3 class="services-title">Technologies</h3>
+            <p class="services-desc">
+              Design practice focused on digital experiences. We bring forth a deep passion for problem-solving.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="team" class="section team">
+      <div class="container">
+        <h2 class="team-title">Our Team</h2>
+        <ul class="team-list">
+          <li class="team-member">
+            <img src="./images/img4.jpg" alt="Mark Guerrero" width="264" loading="lazy" />
+            <div class="team-info">
+              <h3 class="team-name">Mark Guerrero</h3>
+              <p class="team-role">Product Designer</p>
+              <ul class="social-list">
+                <li class="social-item">
+                  <a href="#" class="social-link">
+                    <svg class="social-icon" width="16" height="16">
+                      <use href="./images/icons.svg#icon-instagram-2"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-item">
+                  <a href="#" class="social-link">
+                    <svg class="social-icon" width="16" height="16">
+                      <use href="./images/icons.svg#icon-Group"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-item">
+                  <a href="#" class="social-link">
+                    <svg class="social-icon" width="16" height="16">
+                      <use href="./images/icons.svg#icon-facebook-1"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-item">
+                  <a href="#" class="social-link">
+                    <svg class="social-icon" width="16" height="16">
+                      <use href="./images/icons.svg#icon-linkedin-1"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
           <li class="team-member">
             <img src="./images/img3.jpg" alt="Tom Ford" width="264" loading="lazy" />
             <div class="team-info">
@@ -189,7 +583,6 @@
               </ul>
             </div>
           </li>
-          <!-- Інші члени команди аналогічно -->
           <li class="team-member">
             <img src="./images/img2.jpg" alt="Camila Garcia" width="264" loading="lazy" />
             <div class="team-info">
@@ -233,181 +626,166 @@
               <h3 class="team-name">Daniel Wilson</h3>
               <p class="team-role">UI Designer</p>
               <ul class="social-list">
-            <li class="social-item">
-              <a href="#" class="social-link">
-                <svg class="social-icon" width="16" height="16">
-                  <use href="./images/icons.svg#icon-instagram-2"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social-item">
-              <a href="#" class="social-link">
-                <svg class="social-icon" width="16" height="16">
-                  <use href="./images/icons.svg#icon-Group"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social-item">
-              <a href="#" class="social-link">
-                <svg class="social-icon" width="16" height="16">
-                  <use href="./images/icons.svg#icon-facebook-1"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social-item">
-              <a href="#" class="social-link">
-                <svg class="social-icon" width="16" height="16">
-                  <use href="./images/icons.svg#icon-linkedin-1"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
+                <li class="social-item">
+                  <a href="#" class="social-link">
+                    <svg class="social-icon" width="16" height="16">
+                      <use href="./images/icons.svg#icon-instagram-2"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-item">
+                  <a href="#" class="social-link">
+                    <svg class="social-icon" width="16" height="16">
+                      <use href="./images/icons.svg#icon-Group"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-item">
+                  <a href="#" class="social-link">
+                    <svg class="social-icon" width="16" height="16">
+                      <use href="./images/icons.svg#icon-facebook-1"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-item">
+                  <a href="#" class="social-link">
+                    <svg class="social-icon" width="16" height="16">
+                      <use href="./images/icons.svg#icon-linkedin-1"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
             </div>
           </li>
         </ul>
       </div>
     </section>
-
-
-
-
-
-<section id="portfolio" class="section portfolio">
-  <div class="container">
-    <h2 class="portfolio-title">Our portfolio</h2>
-    <ul class="portfolio-list">
-      <li class="portfolio-item">
-        <div class="img-container">
-          <img src="./images/img6.jpg" alt="banking app" width="360" loading="lazy" />
-          <p class="overlay-text">
-            14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
-          </p>
-        </div>
-        <div class="portfolio-info">
-          <h3 class="portfolio-name">Banking App</h3>
-          <p class="portfolio-category">App</p>
-        </div>
-      </li>
-      <li class="portfolio-item">
-        <div class="img-container">
-          <img src="./images/img5.jpg" alt="banking app" width="360" loading="lazy" />
-          <p class="overlay-text">
-            14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
-          </p>
-        </div>
-        <div class="portfolio-info">
-          <h3 class="portfolio-name">Cashless Payment</h3>
-          <p class="portfolio-category">Marketing</p>
-        </div>
-      </li>
-      <li class="portfolio-item">
-        <div class="img-container">
-          <img src="./images/img10.jpg" alt="banking app" width="360" loading="lazy" />
-          <p class="overlay-text">
-            14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
-          </p>
-        </div>
-        <div class="portfolio-info">
-          <h3 class="portfolio-name">Meditation App</h3>
-          <p class="portfolio-category">App</p>
-        </div>
-      </li>
-      <li class="portfolio-item">
-        <div class="img-container">
-          <img src="./images/img7.jpg" alt="banking app" width="360" loading="lazy" />
-          <p class="overlay-text">
-            14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
-          </p>
-        </div>
-        <div class="portfolio-info">
-          <h3 class="portfolio-name">Taxi Service</h3>
-          <p class="portfolio-category">Marketing</p>
-        </div>
-      </li>
-      <li class="portfolio-item">
-        <div class="img-container">
-          <img src="./images/img8.jpg" alt="banking app" width="360" loading="lazy" />
-          <p class="overlay-text">
-            14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
-          </p>
-        </div>
-        <div class="portfolio-info">
-          <h3 class="portfolio-name">Screen Illustrations</h3>
-          <p class="portfolio-category">Design</p>
-        </div>
-      </li>
-      <li class="portfolio-item">
-        <div class="img-container">
-          <img src="./images/img10.jpg" alt="banking app" width="360" loading="lazy" />
-          <p class="overlay-text">
-            14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
-          </p>
-        </div>
-        <div class="portfolio-info">
-          <h3 class="portfolio-name">Online Courses</h3>
-          <p class="portfolio-category">Marketing</p>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-    
-    
+    <section id="portfolio" class="section portfolio">
+      <div class="container">
+        <h2 class="portfolio-title">Our portfolio</h2>
+        <ul class="portfolio-list">
+          <li class="portfolio-item">
+            <div class="img-container">
+              <img src="./images/img6.jpg" alt="banking app" width="360" loading="lazy" />
+              <p class="overlay-text">
+                14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
+              </p>
+            </div>
+            <div class="portfolio-info">
+              <h3 class="portfolio-name">Banking App</h3>
+              <p class="portfolio-category">App</p>
+            </div>
+          </li>
+          <li class="portfolio-item">
+            <div class="img-container">
+              <img src="./images/img5.jpg" alt="banking app" width="360" loading="lazy" />
+              <p class="overlay-text">
+                14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
+              </p>
+            </div>
+            <div class="portfolio-info">
+              <h3 class="portfolio-name">Cashless Payment</h3>
+              <p class="portfolio-category">Marketing</p>
+            </div>
+          </li>
+          <li class="portfolio-item">
+            <div class="img-container">
+              <img src="./images/img10.jpg" alt="banking app" width="360" loading="lazy" />
+              <p class="overlay-text">
+                14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
+              </p>
+            </div>
+            <div class="portfolio-info">
+              <h3 class="portfolio-name">Meditation App</h3>
+              <p class="portfolio-category">App</p>
+            </div>
+          </li>
+          <li class="portfolio-item">
+            <div class="img-container">
+              <img src="./images/img7.jpg" alt="banking app" width="360" loading="lazy" />
+              <p class="overlay-text">
+                14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
+              </p>
+            </div>
+            <div class="portfolio-info">
+              <h3 class="portfolio-name">Taxi Service</h3>
+              <p class="portfolio-category">Marketing</p>
+            </div>
+          </li>
+          <li class="portfolio-item">
+            <div class="img-container">
+              <img src="./images/img8.jpg" alt="banking app" width="360" loading="lazy" />
+              <p class="overlay-text">
+                14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
+              </p>
+            </div>
+            <div class="portfolio-info">
+              <h3 class="portfolio-name">Screen Illustrations</h3>
+              <p class="portfolio-category">Design</p>
+            </div>
+          </li>
+          <li class="portfolio-item">
+            <div class="img-container">
+              <img src="./images/img10.jpg" alt="banking app" width="360" loading="lazy" />
+              <p class="overlay-text">
+                14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
+              </p>
+            </div>
+            <div class="portfolio-info">
+              <h3 class="portfolio-name">Online Courses</h3>
+              <p class="portfolio-category">Marketing</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
   <footer class="footer" id="contacts">
-  <div class="container">
-    <div class="footer-content">
-      <a href="./index.html" class="logo footer-logo">
-        web<span class="logo-span">Studio</span>
-      </a>
-      <p class="footer-text">
-        Increase the flow of customers and sales for your business with digital marketing &amp; growth solutions.
-      </p>
+    <div class="container">
+      <div class="footer-content">
+        <a href="./index.html" class="logo footer-logo">
+          web<span class="logo-span">Studio</span>
+        </a>
+        <p class="footer-text">
+          Increase the flow of customers and sales for your business with digital marketing &amp; growth solutions.
+        </p>
+      </div>
+      <div class="footer-social">
+        <p class="social-media">Social media</p>
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <svg class="social-icon" width="16" height="16">
+                <use href="./images/icons.svg#icon-instagram-2"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <svg class="social-icon" width="16" height="16">
+                <use href="./images/icons.svg#icon-Group"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <svg class="social-icon" width="16" height="16">
+                <use href="./images/icons.svg#icon-facebook-1"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <svg class="social-icon" width="16" height="16">
+                <use href="./images/icons.svg#icon-linkedin-1"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-social">
-      <p class="social-media">Social media</p>
-      <ul class="social-list">
-        <li class="social-item">
-          <a href="#" class="social-link">
-            <svg class="social-icon" width="16" height="16">
-              <use href="./images/icons.svg#icon-instagram-2"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social-item">
-          <a href="#" class="social-link">
-            <svg class="social-icon" width="16" height="16">
-              <use href="./images/icons.svg#icon-Group"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social-item">
-          <a href="#" class="social-link">
-            <svg class="social-icon" width="16" height="16">
-              <use href="./images/icons.svg#icon-facebook-1"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social-item">
-          <a href="#" class="social-link">
-            <svg class="social-icon" width="16" height="16">
-              <use href="./images/icons.svg#icon-linkedin-1"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</footer>
-
-
+  </footer>
 </body>
 </html>
+
 
