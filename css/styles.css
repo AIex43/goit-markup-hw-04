@@ -442,7 +442,7 @@ img {
 .footer-social {
   display: flex;
   flex-direction: column;
-  margin-right:500;
+  margin-right:500px;
 }
 
 .social-media {
