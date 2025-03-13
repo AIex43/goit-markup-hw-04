@@ -158,7 +158,7 @@ img {
 
 /* Секція hero */
 .hero {
-  max-width: 1550px;
+  max-width: 1440px;
   margin: 0 auto;
   background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
                       url("../images/people-office-1.jpg");
