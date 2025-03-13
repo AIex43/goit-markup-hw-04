@@ -342,6 +342,10 @@ img {
   background-color: #404bbf;
 }
 
+.footer .social-link:hover,
+.footer .social-link:focus {
+  background-color: #31d0aa;
+}
 /* Секція portfolio */
 .portfolio {
   padding: 120px 0;
@@ -462,4 +466,8 @@ img {
   width: 40px;
   height: 40px;
 }
+.footer-content {
+  margin-right: 120px
+}
+
 
