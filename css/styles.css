@@ -3,7 +3,9 @@ h1, h2, h3, p, ul {
   margin: 0;
   padding: 0;
 }
-
+.team-info .social-list {
+  margin-top: 15px;
+}
 ul {
   list-style: none;
 }
